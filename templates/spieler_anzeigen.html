@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+
+    
+    <table border="1" align="center">
+        <tr align="center">
+            <td colspan="3">{{ spieler.name }}</td>
+        </tr>
+        <tr align="center">
+            <td>
+                <p>Datum</p>
+            </td>
+            <td>
+                <p>Richtig</p>
+            </td>
+            <td>
+                <p>Falsch</p>
+            </td>
+        </tr>
+        {% for g in games %}
+        <tr align="center">
+            <td>
+                <p>{{ g.date.strftime("%d %B %Y") }}</p>
+            </td>
+                <td style="background-color: #4CAF50;"> 
+                    <p>{{ g.richtig }}</p>
+                </td>
+                <td style="background-color: #FF5733;"> 
+                    <p>{{ g.falsch }}</p>             
+            </td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+    <a class="button" href="{{ url_for('index') }}">Zurückkehren</a>
+
+
+
+
+{% endblock %}

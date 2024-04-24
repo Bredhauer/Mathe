@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<form action="/neu" method="post" >
+    <p><label>Name: </label><input type="text" name="name" value="" requied /></p>
+    <p><label>Password: </label><input type="password" name="psw" value="" requied /></p>
+    <p><label>Wiederholen: </label><input type="password" name="psw2" value="" requied /></p>
+    <p><input class="button" type="submit" value="Weiter" /></p>
+</form>
+
+{% endblock %}

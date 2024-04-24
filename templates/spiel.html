@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+
+
+<form action="/spiel" method="post">
+    <p><label>{{x}} {{char}} {{y}} = </label><input type="number" name="ergebnis" value="" required /></p>
+    <p><input class="button" type="submit" value="Prüfen" /></p>
+    
+</form>
+
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}"><p>{{msg}}</p></div>
+{% endfor %}
+
+<a class="button" href="{{ url_for('index') }}">Neu anfangen</a>
+
+{% endblock %}

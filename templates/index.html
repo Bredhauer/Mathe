@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+{% if menu %}
+<ul>
+    {% for p in menu %}
+    <li><a class="button" href="{{ url_for(p.url) }}">{{p.title}}</a></li>
+    {% endfor %}
+{% endif %}
+</ul>
+
+{% endblock %}

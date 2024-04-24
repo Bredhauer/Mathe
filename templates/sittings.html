@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<form action="/sittings" method="POST">
+    <p><label>Addition bis: </label><input type="number" name="add" value="" required /></p>
+    <p><label>Subtraktion bis: </label><input type="number" name="sub" value="" required /></p>
+    <p><input class="button" type="submit" value="Spielen" /></p>
+</form>
+
+{% endblock %}
